@@ -9,6 +9,8 @@
 mod fill_harmonics;
 pub mod natural_music_box;
 pub mod western_music_box;
+
+
 /// Adjusts quantity of notes in hashmap
 pub const SCOPE: i64 = 365; 
 /// Music box tuning
@@ -18,7 +20,8 @@ pub const TONIC: f64 = 432.0;
 ///Ensure the indexing is correct and an entry exists
 /// TODO: Confirm this matches the physical situation
 fn test_natural() {
-    use crate::natural_harmonics::NaturalMusicBox;
+    use crate::natural_music_box::NaturalMusicBox;
+
     let music = NaturalMusicBox::new();
     let query_natural_harmonics_4over3 = match music.harmonics.get("3/4") {
         Some(_v) => true,
@@ -53,7 +56,8 @@ fn test_natural() {
 }
 #[test]
 fn test_western() {
-    use crate::western_harmonics::WesternMusicBox;
+    use crate::western_music_box::WesternMusicBox;
+
     let music = WesternMusicBox::new();
     let query_a0 = match music.harmonics.get("A0") {
         Some(_v) => true,
