@@ -1,9 +1,4 @@
 
-/// # MusicBox
-/// The future of this crate resides mostly in the analysis of musical data
-/// Feeding a music AI
-/// More bold would be to create a VST
-/// All contributions welcome, love to see how it plays out.
 mod fill_harmonics;
 pub mod natural_music_box;
 pub mod western_music_box;
