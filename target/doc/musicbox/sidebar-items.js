@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["SCOPE","Adjusts quantity of notes in hashmap"],["TONIC","Music box tuning"]],"mod":[["natural_music_box",""],["western_music_box",""]]});

@@ -1,0 +1,9 @@
+[package]
+name = "musicbox"
+version = "0.1.0"
+author = ["LifelessRelics <Holozetta@hologramhall.io"]
+description = "Generates a hashmap of musical notes de la musica"
+license ="MIT"
+edition = "2021"
+
+[dependencies]
