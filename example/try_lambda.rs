@@ -1,5 +1,7 @@
 use musicbox::{phi, lambda, twlv_root_two};
 
+
+///dbgs useful operators for dealing with string harmonics
 fn main() {
     let tonic = lambda(440, 0);
     let twlv_root_two = twlv_root_two();
