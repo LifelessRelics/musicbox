@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["musicbox"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"musicbox/natural_music_box/struct.NaturalMusicBox.html\" title=\"struct musicbox::natural_music_box::NaturalMusicBox\">NaturalMusicBox</a>","synthetic":false,"types":["musicbox::natural_music_box::NaturalMusicBox"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

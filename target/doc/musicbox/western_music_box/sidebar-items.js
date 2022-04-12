@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["WesternMusicBox","Hashmap containing notes congruent with western music theory, not arranged with middle C as C0, with reason that no natural string may produce a harmonic below its tonic."]]});
