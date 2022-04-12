@@ -1,11 +1,17 @@
 [package]
 name = "musicbox"
-version = "0.1.0"
+version = "0.1.1"
 author = ["LifelessRelics <Holozetta@hologramhall.io"]
 repository = "https://github.com/LifelessRelics/musicbox.git"
 description = "Generates a hashmap of musical notes de la musica"
 license ="MIT"
 edition = "2021"
+
+[[example]]
+name="try_lambda"
+path="example/try_lambda.rs"
+
+
 
 
 [dependencies]
