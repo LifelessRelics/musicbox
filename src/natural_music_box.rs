@@ -2,7 +2,7 @@ use crate::traits::FillHarmonics;
 use crate::{SCOPE, TONIC};
 use std::collections::HashMap;
 
-/// Note of the harmonic harmonic series N+1/N where N is 1..inf because dividing by zero is the tonic "quote me"
+/// Note of the harmonic series N+1/N where N is 1..inf because dividing by zero is the tonic "quote me"
 /// Naming conventions in this index are according to physical position of a string to ring a given harmonic
 /// ::the indexing is the inverse of the harmonic series to make visualizing the frequency a physical location along a string
 #[derive(Default)]
