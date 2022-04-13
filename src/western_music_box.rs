@@ -1,14 +1,17 @@
-use crate::fill_harmonics::FillHarmonics;
+use crate::chords::{Chord,Interval};
+use crate::traits::FillHarmonics;
 use crate::{SCOPE, TONIC};
 use std::collections::HashMap;
 
 /// Hashmap containing notes congruent with western music theory,
 /// not arranged with middle C as C0, with reason that no natural string may produce a harmonic below its tonic.
+#[derive(Default)]
 pub struct WesternMusicBox {
     tonic: f64,
     western_degree: i64,
     notes: [String; 12],
     pub harmonics: HashMap<String, f64>,
+    chord: Vec<Interval>,
 }
 
 impl WesternMusicBox {
@@ -32,6 +35,7 @@ impl WesternMusicBox {
                 "G".to_owned(),
                 "Ab".to_owned(),
             ],
+            chord: vec![],
         };
         music.fill_harmonics();
         music.fill_inverse_harmonics();
@@ -78,3 +82,20 @@ impl FillHarmonics for WesternMusicBox {
         }
     }
 }
+
+
+// enum ChordTonic {
+//     A,
+//     B,
+//     C,
+//     D,
+//     E,
+//     F,
+//     G,
+//     Ab,
+//     Bb,
+//     Db,
+//     Eb,
+//     Gb,
+//     Ab,
+// }
