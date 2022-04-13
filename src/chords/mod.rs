@@ -1,6 +1,4 @@
-use crate::lambda;
 pub mod chord_library;
-
 use crate::chords::chord_library::augmented::*;
 use crate::chords::chord_library::minor::*;
 use crate::chords::chord_library::atonal::*;
@@ -9,6 +7,9 @@ use crate::chords::chord_library::dominant::*;
 use crate::chords::chord_library::major::*;
 use crate::chords::chord_library::bitonal::*;
 use crate::chords::chord_library::just::*;
+use crate::interval::Interval;
+use crate::TONIC;
+use crate::{semitone,eigth_tone, sixteenth_tone, quartertone, three4tone};
 
 #[derive(Debug)]
 pub struct Chord {
@@ -18,43 +19,12 @@ pub struct Chord {
 }
 
 
-#[derive(Debug)]
-pub enum Interval {
-    Tonic,
-    Semitone,
-    Wholetone,
-    Min3,
-    Maj3,
-    Subdominant,
-    Dim5,
-    Dominant,
-    Aug5,
-    Maj6,
-    Dom7,
-    LeadTone,
-    Octave,
-    Min9,
-    Maj9,
-    Aug9,
-    Tenth, //maj3 + octave
-    Eleventh, //fourth + octave 
-    Aug11, //tritone + octave
-    Twelfth, //Fifth + octave
-    Aug12, //Aug5 + octave
-    Thirteenth, //Maj6 + octave
-    Aug13,  //Dom7 + octave
-    Maj14, //leadtone two octaves over
-    Fifteenth,
-    Mystic, //two octaves + wholetone
-    OctaveMaj10, //octave + Tenth
-    OctaveTwelfth, //Octave over twelfth
-}
 
 /// Seperated functionality for building chords
 impl Chord {
     pub fn new() -> Self {
         Self {
-            tonic: 432.0,
+            tonic: TONIC,
             notes: _major(),
             frequencies: vec![],
         }
@@ -64,34 +34,42 @@ pub fn get_freq(&mut self) {
     for i in &self.notes {
     
        match i {
-        Interval::Tonic=> self.frequencies.push(lambda(self.tonic, 0)),
-        Interval::Semitone=> self.frequencies.push(lambda(self.tonic, 1)),
-        Interval::Wholetone=> self.frequencies.push(lambda(self.tonic, 2)),
-        Interval::Min3=> self.frequencies.push(lambda(self.tonic, 3)),
-        Interval::Maj3=> self.frequencies.push(lambda(self.tonic, 4)),
-        Interval::Subdominant=> self.frequencies.push(lambda(self.tonic, 5)),
-        Interval::Dim5=> self.frequencies.push(lambda(self.tonic, 6)),
-        Interval::Dominant=> self.frequencies.push(lambda(self.tonic, 7)),
-        Interval::Aug5=> self.frequencies.push(lambda(self.tonic, 8)),
-        Interval::Maj6=> self.frequencies.push(lambda(self.tonic, 9)),
-        Interval::Dom7=> self.frequencies.push(lambda(self.tonic, 10)),
-        Interval::LeadTone=> self.frequencies.push(lambda(self.tonic, 11)),
-        Interval::Octave=> self.frequencies.push(lambda(self.tonic, 12)),
-        Interval::Min9=> self.frequencies.push(lambda(self.tonic, 13)),
-        Interval::Maj9=> self.frequencies.push(lambda(self.tonic, 14)),
-        Interval::Aug9=> self.frequencies.push(lambda(self.tonic, 15)),
-        Interval::Tenth=> self.frequencies.push(lambda(self.tonic, 16)), //maj3 + octave
-        Interval::Eleventh=> self.frequencies.push(lambda(self.tonic, 17)), //fourth + octave 
-        Interval::Aug11=> self.frequencies.push(lambda(self.tonic, 18)), //tritone + octave
-        Interval::Twelfth=> self.frequencies.push(lambda(self.tonic, 19)), //Fifth + octave
-        Interval::Aug12=> self.frequencies.push(lambda(self.tonic, 20)), //Aug5 + octave
-        Interval::Thirteenth=> self.frequencies.push(lambda(self.tonic, 21)), //Maj6 + octave
-        Interval::Aug13=> self.frequencies.push(lambda(self.tonic, 22)),  //Dom7 + octave
-        Interval::Maj14=> self.frequencies.push(lambda(self.tonic, 23)), 
-        Interval::Fifteenth=> self.frequencies.push(lambda(self.tonic, 24)),
-        Interval::Mystic=> self.frequencies.push(lambda(self.tonic, 26)), //two octaves + wholetone
-        Interval::OctaveMaj10=> self.frequencies.push(lambda(self.tonic, 28)), //octave + Tenth
-        Interval::OctaveTwelfth=> self.frequencies.push(lambda(self.tonic, 31)), //Octave over twelfth
+        Interval::Tonic=> self.frequencies.push(  semitone(self.tonic, 0)  ),
+
+        Interval::Sextone => self.frequencies.push(  sixteenth_tone(self.tonic, 1)  ), // 16nd tone
+        Interval::Octone => self.frequencies.push( eigth_tone(self.tonic, 1)  ), // 8th tone
+        Interval::Quartertone => self.frequencies.push(  quartertone(self.tonic, 1)  ), //Quarter tone
+
+        Interval::Semitone=> self.frequencies.push(semitone(self.tonic, 1)), //HALFSTEP
+
+        Interval::Three4tone => self.frequencies.push(three4tone(self.tonic, 1)),
+
+        Interval::Wholetone=> self.frequencies.push(semitone(self.tonic, 2)),
+        Interval::Min3=> self.frequencies.push(semitone(self.tonic, 3)),
+        Interval::Maj3=> self.frequencies.push(semitone(self.tonic, 4)),
+        Interval::Subdominant=> self.frequencies.push(semitone(self.tonic, 5)),
+        Interval::Dim5=> self.frequencies.push(semitone(self.tonic, 6)),
+        Interval::Dominant=> self.frequencies.push(semitone(self.tonic, 7)),
+        Interval::Aug5=> self.frequencies.push(semitone(self.tonic, 8)),
+        Interval::Maj6=> self.frequencies.push(semitone(self.tonic, 9)),
+        Interval::Dom7=> self.frequencies.push(semitone(self.tonic, 10)),
+        Interval::LeadTone=> self.frequencies.push(semitone(self.tonic, 11)),
+        Interval::Octave=> self.frequencies.push(semitone(self.tonic, 12)),
+        Interval::Min9=> self.frequencies.push(semitone(self.tonic, 13)),
+        Interval::Maj9=> self.frequencies.push(semitone(self.tonic, 14)),
+        Interval::Aug9=> self.frequencies.push(semitone(self.tonic, 15)),
+        Interval::Tenth=> self.frequencies.push(semitone(self.tonic, 16)), //maj3 + octave
+        Interval::Eleventh=> self.frequencies.push(semitone(self.tonic, 17)), //fourth + octave 
+        Interval::Aug11=> self.frequencies.push(semitone(self.tonic, 18)), //tritone + octave
+        Interval::Twelfth=> self.frequencies.push(semitone(self.tonic, 19)), //Fifth + octave
+        Interval::Aug12=> self.frequencies.push(semitone(self.tonic, 20)), //Aug5 + octave
+        Interval::Thirteenth=> self.frequencies.push(semitone(self.tonic, 21)), //Maj6 + octave
+        Interval::Aug13=> self.frequencies.push(semitone(self.tonic, 22)),  //Dom7 + octave
+        Interval::Maj14=> self.frequencies.push(semitone(self.tonic, 23)), 
+        Interval::Fifteenth=> self.frequencies.push(semitone(self.tonic, 24)),
+        Interval::Mystic=> self.frequencies.push(semitone(self.tonic, 26)), //two octaves + wholetone
+        Interval::OctaveMaj10=> self.frequencies.push(semitone(self.tonic, 28)), //octave + Tenth
+        Interval::OctaveTwelfth=> self.frequencies.push(semitone(self.tonic, 31)), //Octave over twelfth
        }   
     }
 }

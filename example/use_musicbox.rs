@@ -7,4 +7,5 @@ fn main() {
     let a_major_0 = music
         .harmonics
         .retain(|k, _| k == "A0" || k == "Db0" || k == "E0");
+    dbg!(a_major_0);
 }

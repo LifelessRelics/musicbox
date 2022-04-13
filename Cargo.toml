@@ -8,12 +8,14 @@ license ="MIT"
 edition = "2021"
 
 [[example]]
-name="try_lambda"
-path="example/try_lambda.rs"
+name="try_interval_calculations"
+path="example/try_interval_calculations.rs"
 [[example]]
 name="use_musicbox"
 path="example/use_musicbox.rs"
-
+[[example]]
+name="use_makam"
+path="example/use_makam.rs"
 
 
 [dependencies]
