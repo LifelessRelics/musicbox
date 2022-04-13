@@ -1,4 +1,3 @@
-use crate::western_music_box;
 use crate::lambda;
 pub mod chord_library;
 
@@ -65,37 +64,35 @@ pub fn get_freq(&mut self) {
     for i in &self.notes {
     
        match i {
-        Tonic=> self.frequencies.push(lambda(self.tonic, 0)),
-        Semitone=> self.frequencies.push(lambda(self.tonic, 1)),
-        Wholetone=> self.frequencies.push(lambda(self.tonic, 2)),
-        Min3=> self.frequencies.push(lambda(self.tonic, 3)),
-        Maj3=> self.frequencies.push(lambda(self.tonic, 4)),
-        Subdominant=> self.frequencies.push(lambda(self.tonic, 5)),
-        Dim5=> self.frequencies.push(lambda(self.tonic, 6)),
-        Dominant=> self.frequencies.push(lambda(self.tonic, 7)),
-        Aug5=> self.frequencies.push(lambda(self.tonic, 8)),
-        Maj6=> self.frequencies.push(lambda(self.tonic, 9)),
-        Dom7=> self.frequencies.push(lambda(self.tonic, 10)),
-        LeadTone=> self.frequencies.push(lambda(self.tonic, 11)),
-        Octave=> self.frequencies.push(lambda(self.tonic, 12)),
-        Min9=> self.frequencies.push(lambda(self.tonic, 13)),
-        Maj9=> self.frequencies.push(lambda(self.tonic, 14)),
-        Aug9=> self.frequencies.push(lambda(self.tonic, 15)),
-        Tenth=> self.frequencies.push(lambda(self.tonic, 16)), //maj3 + octave
-        Eleventh=> self.frequencies.push(lambda(self.tonic, 17)), //fourth + octave 
-        Aug11=> self.frequencies.push(lambda(self.tonic, 18)), //tritone + octave
-        Twelfth=> self.frequencies.push(lambda(self.tonic, 19)), //Fifth + octave
-        Aug12=> self.frequencies.push(lambda(self.tonic, 20)), //Aug5 + octave
-        Thirteenth=> self.frequencies.push(lambda(self.tonic, 21)), //Maj6 + octave
-        Aug13=> self.frequencies.push(lambda(self.tonic, 22)),  //Dom7 + octave
-        Maj14=> self.frequencies.push(lambda(self.tonic, 23)), 
-        Fifteenth=> self.frequencies.push(lambda(self.tonic, 24)),
-        Mystic=> self.frequencies.push(lambda(self.tonic, 26)), //two octaves + wholetone
-        OctaveMaj10=> self.frequencies.push(lambda(self.tonic, 28)), //octave + Tenth
-        OctaveTwelfth=> self.frequencies.push(lambda(self.tonic, 31)), //Octave over twelfth
-    
-       }
-            
+        Interval::Tonic=> self.frequencies.push(lambda(self.tonic, 0)),
+        Interval::Semitone=> self.frequencies.push(lambda(self.tonic, 1)),
+        Interval::Wholetone=> self.frequencies.push(lambda(self.tonic, 2)),
+        Interval::Min3=> self.frequencies.push(lambda(self.tonic, 3)),
+        Interval::Maj3=> self.frequencies.push(lambda(self.tonic, 4)),
+        Interval::Subdominant=> self.frequencies.push(lambda(self.tonic, 5)),
+        Interval::Dim5=> self.frequencies.push(lambda(self.tonic, 6)),
+        Interval::Dominant=> self.frequencies.push(lambda(self.tonic, 7)),
+        Interval::Aug5=> self.frequencies.push(lambda(self.tonic, 8)),
+        Interval::Maj6=> self.frequencies.push(lambda(self.tonic, 9)),
+        Interval::Dom7=> self.frequencies.push(lambda(self.tonic, 10)),
+        Interval::LeadTone=> self.frequencies.push(lambda(self.tonic, 11)),
+        Interval::Octave=> self.frequencies.push(lambda(self.tonic, 12)),
+        Interval::Min9=> self.frequencies.push(lambda(self.tonic, 13)),
+        Interval::Maj9=> self.frequencies.push(lambda(self.tonic, 14)),
+        Interval::Aug9=> self.frequencies.push(lambda(self.tonic, 15)),
+        Interval::Tenth=> self.frequencies.push(lambda(self.tonic, 16)), //maj3 + octave
+        Interval::Eleventh=> self.frequencies.push(lambda(self.tonic, 17)), //fourth + octave 
+        Interval::Aug11=> self.frequencies.push(lambda(self.tonic, 18)), //tritone + octave
+        Interval::Twelfth=> self.frequencies.push(lambda(self.tonic, 19)), //Fifth + octave
+        Interval::Aug12=> self.frequencies.push(lambda(self.tonic, 20)), //Aug5 + octave
+        Interval::Thirteenth=> self.frequencies.push(lambda(self.tonic, 21)), //Maj6 + octave
+        Interval::Aug13=> self.frequencies.push(lambda(self.tonic, 22)),  //Dom7 + octave
+        Interval::Maj14=> self.frequencies.push(lambda(self.tonic, 23)), 
+        Interval::Fifteenth=> self.frequencies.push(lambda(self.tonic, 24)),
+        Interval::Mystic=> self.frequencies.push(lambda(self.tonic, 26)), //two octaves + wholetone
+        Interval::OctaveMaj10=> self.frequencies.push(lambda(self.tonic, 28)), //octave + Tenth
+        Interval::OctaveTwelfth=> self.frequencies.push(lambda(self.tonic, 31)), //Octave over twelfth
+       }   
     }
 }
     

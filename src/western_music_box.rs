@@ -1,4 +1,4 @@
-use crate::chords::{Chord,Interval};
+use crate::chords::{Interval};
 use crate::traits::FillHarmonics;
 use crate::{SCOPE, TONIC};
 use std::collections::HashMap;
@@ -11,7 +11,7 @@ pub struct WesternMusicBox {
     western_degree: i64,
     notes: [String; 12],
     pub harmonics: HashMap<String, f64>,
-    chord: Vec<Interval>,
+    chord: Vec<Interval>, //TODO, impl chord library over this field in the musicbox
 }
 
 impl WesternMusicBox {
