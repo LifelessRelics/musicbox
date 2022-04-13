@@ -1,6 +1,6 @@
 [package]
 name = "musicbox"
-version = "0.1.2"
+version = "0.1.3"
 author = "LifelessRelics <Holozetta@hologramhall.io"
 repository = "https://github.com/LifelessRelics/musicbox.git"
 description = "Generates a hashmap of musical notes de la musica"
