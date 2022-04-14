@@ -4,6 +4,7 @@ pub mod interval;
 pub mod makam;
 pub mod natural_musicbox;
 pub mod western_musicbox;
+ 
 /// Adjusts quantity of notes in hashmap
 pub const SCOPE: i64 = 365;
 /// Recently changed such that the A0 corresponds to the lowest note on a piano. Therefore middle-c is C3
@@ -43,7 +44,7 @@ pub fn semitone(tonic_freq: f64, degree: i64) -> f64 {
 
 
 ///Used to construct musicbox harmonics
-pub trait FillHarmonics {
-    fn fill_harmonics(&mut self);
-    fn fill_inverse_harmonics(&mut self);
+pub trait FillsNotes {
+    fn fill_notes(&mut self);
+    fn fill_inverse_notes(&mut self);
 }

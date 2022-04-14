@@ -15,14 +15,14 @@ pub struct Guitar{
 
  impl Guitar {
      ///Uses western music box to get notes, so adjust crate::TONIC for different
-     pub fn standard() -> Self {
+     pub fn standard_tuning() -> Self {
           let music = WesternMusicBox::new();
-          let e = music.harmonics.get("E1").unwrap();
-          let a = music.harmonics.get("A2").unwrap();
-          let d = music.harmonics.get("D2").unwrap();
-          let g = music.harmonics.get("G2").unwrap();
-          let b = music.harmonics.get("B3").unwrap();
-          let high_e = music.harmonics.get("E3").unwrap();
+          let e = music.notes.get("E1").unwrap(); //Use of closures here in .map() do anything for me?
+          let a = music.notes.get("A2").unwrap();
+          let d = music.notes.get("D2").unwrap();
+          let g = music.notes.get("G2").unwrap();
+          let b = music.notes.get("B3").unwrap();
+          let high_e = music.notes.get("E3").unwrap();
           let tuning = vec![*e, *a, *d, *g, *b, *high_e];
           let mut tones = vec![];
           for i in 0..tuning.len(){

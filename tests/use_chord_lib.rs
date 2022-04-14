@@ -4,7 +4,7 @@ use musicbox::western_musicbox::WesternMusicBox;
 #[test]
 fn get_frequencies_of_a_chord() {
     let music = WesternMusicBox::new();
-    let middle_c = match music.harmonics.get("C3") {
+    let middle_c = match music.notes.get("C3") {
         Some(v) => v,
         None => panic!(),
     };

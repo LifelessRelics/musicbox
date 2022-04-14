@@ -1,5 +1,5 @@
 use crate::interval::Interval;
-use crate::{SCOPE, TONIC, FillHarmonics};
+use crate::{SCOPE, TONIC, FillsNotes};
 use std::collections::HashMap;
 
 /// Hashmap containing notes congruent with western music theory,
@@ -8,9 +8,8 @@ use std::collections::HashMap;
 pub struct WesternMusicBox {
     tonic: f64,
     western_degree: i64,
-    notes: [String; 12],
-    pub harmonics: HashMap<String, f64>,
-    chord: Vec<Interval>, //TODO, impl chord library over this field in the musicbox
+    pub notes: HashMap<String, f64>,
+    chord: Vec<Interval>,
 }
 
 impl WesternMusicBox {
@@ -18,32 +17,34 @@ impl WesternMusicBox {
         let mut music = Self {
             tonic: TONIC,
             western_degree: 0,
-            harmonics: HashMap::new(),
+            notes: HashMap::new(),
 
-            notes: [
-                "A".to_owned(),
-                "Bb".to_owned(),
-                "B".to_owned(),
-                "C".to_owned(),
-                "Db".to_owned(),
-                "D".to_owned(),
-                "Eb".to_owned(),
-                "E".to_owned(),
-                "F".to_owned(),
-                "Gb".to_owned(),
-                "G".to_owned(),
-                "Ab".to_owned(),
-            ],
+            
             chord: vec![],
         };
-        music.fill_harmonics();
-        music.fill_inverse_harmonics();
+        music.fill_notes();
+        music.fill_inverse_notes();
         music
     }
 }
 
-impl FillHarmonics for WesternMusicBox {
-    fn fill_harmonics(&mut self) {
+impl FillsNotes for WesternMusicBox {
+    fn fill_notes(&mut self) {
+        let notes =[
+            "A".to_string(),
+            "Bb".to_string(),
+            "B".to_string(),
+            "C".to_string(),
+            "Db".to_string(),
+            "D".to_string(),
+            "Eb".to_string(),
+            "E".to_string(),
+            "F".to_string(),
+            "Gb".to_string(),
+            "G".to_string(),
+            "Ab".to_string(),
+        ];
+
         let mut j: i64 = 0;
         let mut k: usize = 0;
         for i in 0..SCOPE {
@@ -55,13 +56,28 @@ impl FillHarmonics for WesternMusicBox {
             self.western_degree = i;
             let twelth_root_ratio: f64 = self.western_degree as f64 / 12.0;
             let lambda: f64 = self.tonic * (2.0_f64.powf(twelth_root_ratio));
-            self.harmonics
-                .insert(format!("{}{}", self.notes[k], j), lambda.to_owned());
+            self.notes
+                .insert(format!("{}{}", notes[k], j), lambda.to_owned());
 
             k += 1;
         }
     }
-    fn fill_inverse_harmonics(&mut self) {
+
+    fn fill_inverse_notes(&mut self) {
+        let notes =[
+            "A".to_string(),
+            "Bb".to_string(),
+            "B".to_string(),
+            "C".to_string(),
+            "Db".to_string(),
+            "D".to_string(),
+            "Eb".to_string(),
+            "E".to_string(),
+            "F".to_string(),
+            "Gb".to_string(),
+            "G".to_string(),
+            "Ab".to_string(),
+        ];
         let mut j: i64 = 0;
         let mut k: usize = 0;
 
@@ -74,8 +90,8 @@ impl FillHarmonics for WesternMusicBox {
             self.western_degree = i;
             let twelth_root_ratio: f64 = self.western_degree as f64 / 12.0;
             let lambda: f64 = self.tonic / (2.0_f64.powf(twelth_root_ratio));
-            self.harmonics
-                .insert(format!("{}{}", self.notes[k], j), lambda);
+            self.notes
+                .insert(format!("{}{}", notes[k], j), lambda);
 
             k += 1;
         }
