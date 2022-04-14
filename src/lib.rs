@@ -3,7 +3,6 @@ pub mod chords;
 pub mod interval;
 pub mod makam;
 pub mod natural_musicbox;
-mod traits;
 pub mod western_musicbox;
 /// Adjusts quantity of notes in hashmap
 pub const SCOPE: i64 = 365;
@@ -40,4 +39,11 @@ pub fn sixteenth_tone(tonic_freq: f64, stack: i64) -> f64 {
 /// Western theory function takes in a tonic frequency and returns the frequency corresponding to:  Interval_frequency(degree) = TONIC* 2.0^(degree/12)
 pub fn semitone(tonic_freq: f64, degree: i64) -> f64 {
     tonic_freq * 2.0_f64.powf(degree as f64 / 12.0)
+}
+
+
+///Used to construct musicbox harmonics
+pub trait FillHarmonics {
+    fn fill_harmonics(&mut self);
+    fn fill_inverse_harmonics(&mut self);
 }

@@ -1,5 +1,5 @@
 use crate::interval::Interval;
-use crate::{SCOPE, TONIC};
+use crate::{SCOPE, TONIC, FillHarmonics};
 use std::collections::HashMap;
 
 /// Hashmap containing notes congruent with western music theory,
@@ -82,10 +82,7 @@ impl FillHarmonics for WesternMusicBox {
     }
 }
 
-trait FillHarmonics {
-    fn fill_harmonics(&mut self);
-    fn fill_inverse_harmonics(&mut self);
-}
+
 
 // enum ChordTonic {
 //     A,

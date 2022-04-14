@@ -1,5 +1,4 @@
-use crate::traits::FillHarmonics;
-use crate::{SCOPE, TONIC};
+use crate::{SCOPE, TONIC, FillHarmonics};
 use std::collections::HashMap;
 
 /// Note of the harmonic series N+1/N where N is 1..inf because dividing by zero is the tonic "quote me"
