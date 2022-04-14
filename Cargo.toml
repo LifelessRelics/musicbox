@@ -1,9 +1,9 @@
 [package]
 name = "musicbox"
-version = "0.1.5"
+version = "0.1.6"
 author = "LifelessRelics <Holozetta@hologramhall.io"
 repository = "https://github.com/LifelessRelics/musicbox.git"
-description = "Generates a hashmap of musical notes de la musica"
+description = "General Musical Framework for working with tonality"
 license ="MIT"
 edition = "2021"
 
@@ -16,6 +16,8 @@ path="example/use_musicbox.rs"
 [[example]]
 name="use_makam"
 path="example/use_makam.rs"
-
+[[example]]
+name="guitar"
+path="example/guitar.rs"
 
 [dependencies]

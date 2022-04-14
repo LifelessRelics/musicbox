@@ -7,7 +7,7 @@ fn main() {
 
     dbg!(iota);
     dbg!(kappa);
-    
+
     // let tonic = lambda(440.0, 0);
     // let fifth = lambda(tonic, 7);
     // let twlv_root_two = twlv_root_two();

@@ -1,14 +1,8 @@
-
-
 pub mod major {
     use crate::chords::Interval;
 
     pub fn _major() -> Vec<Interval> {
-        vec![
-            Interval::Tonic,
-            Interval::Maj3,
-            Interval::Dominant,
-        ]
+        vec![Interval::Tonic, Interval::Maj3, Interval::Dominant]
     }
 
     pub fn _maj7() -> Vec<Interval> {
@@ -19,7 +13,6 @@ pub mod major {
             Interval::LeadTone,
         ]
     }
-   
 
     pub fn _dominant9() -> Vec<Interval> {
         vec![
@@ -37,7 +30,7 @@ pub mod major {
             Interval::Dominant,
             Interval::Dom7,
             Interval::Maj9,
-            Interval::Eleventh
+            Interval::Eleventh,
         ]
     }
     pub fn _dominantmin9() -> Vec<Interval> {
@@ -127,7 +120,7 @@ pub mod major {
             Interval::Maj9,
         ]
     }
-    pub fn _maj9()-> Vec<Interval>  {
+    pub fn _maj9() -> Vec<Interval> {
         vec![
             Interval::Tonic,
             Interval::Maj3,
@@ -154,18 +147,13 @@ pub mod major {
             Interval::LeadTone,
         ]
     }
-    
 }
 
 pub mod minor {
     use crate::chords::Interval;
 
     pub fn _minor() -> Vec<Interval> {
-        vec![
-            Interval::Tonic,
-            Interval::Min3,
-            Interval::Dominant,
-        ]
+        vec![Interval::Tonic, Interval::Min3, Interval::Dominant]
     }
     pub fn _minmaj7() -> Vec<Interval> {
         vec![
@@ -217,16 +205,12 @@ pub mod minor {
             Interval::Dom7,
             Interval::Maj9,
             Interval::Eleventh,
-            Interval::Thirteenth
+            Interval::Thirteenth,
         ]
     }
-    
+
     pub fn _mediant() -> Vec<Interval> {
-        vec![
-            Interval::Maj3,
-            Interval::Dominant,
-            Interval::LeadTone,
-        ]
+        vec![Interval::Maj3, Interval::Dominant, Interval::LeadTone]
     }
     pub fn _min11() -> Vec<Interval> {
         vec![
@@ -244,18 +228,13 @@ pub mod minor {
 
         vec![Interval::Maj3, Interval::Dominant, Interval::LeadTone]
     }
-
 }
 
 pub mod augmented {
     use crate::chords::Interval;
 
     pub fn _aug() -> Vec<Interval> {
-        vec![
-            Interval::Tonic,
-            Interval::Maj3,
-            Interval::Aug5,
-        ]
+        vec![Interval::Tonic, Interval::Maj3, Interval::Aug5]
     }
     pub fn _aug7() -> Vec<Interval> {
         vec![
@@ -267,12 +246,8 @@ pub mod augmented {
     }
 
     pub fn _aug6_italian() -> Vec<Interval> {
-        vec![
-            Interval::Tonic,
-            Interval::Maj3,
-            Interval::Maj6,
-        ]
-    } 
+        vec![Interval::Tonic, Interval::Maj3, Interval::Maj6]
+    }
 
     pub fn _aug6_french() -> Vec<Interval> {
         vec![
@@ -281,7 +256,7 @@ pub mod augmented {
             Interval::Dim5,
             Interval::Maj6,
         ]
-    } 
+    }
 
     pub fn _aug6_german() -> Vec<Interval> {
         vec![
@@ -290,7 +265,7 @@ pub mod augmented {
             Interval::Dominant,
             Interval::Maj6,
         ]
-    } 
+    }
     pub fn _aug11() -> Vec<Interval> {
         vec![
             Interval::Tonic,
@@ -300,7 +275,7 @@ pub mod augmented {
             Interval::Maj9,
             Interval::Eleventh,
         ]
-    } 
+    }
     pub fn _lydian() -> Vec<Interval> {
         vec![
             Interval::Tonic,
@@ -324,17 +299,18 @@ pub mod augmented {
             Interval::Maj3,
             Interval::Aug5,
             Interval::Dom7,
-            Interval::Maj9, 
+            Interval::Maj9,
         ]
     }
-    pub fn _ninthdim5()-> Vec<Interval>  {
-       vec![ Interval::Tonic,
-        Interval::Maj3,
-        Interval::Dim5,
-        Interval::LeadTone,
-        Interval::Maj9,]
+    pub fn _ninthdim5() -> Vec<Interval> {
+        vec![
+            Interval::Tonic,
+            Interval::Maj3,
+            Interval::Dim5,
+            Interval::LeadTone,
+            Interval::Maj9,
+        ]
     }
-
 }
 
 pub mod diminished {
@@ -374,10 +350,10 @@ pub mod diminished {
         vec![
             Interval::Wholetone,
             Interval::Subdominant,
-            Interval::LeadTone
+            Interval::LeadTone,
         ]
     }
-    
+
     pub fn _halfdim7() -> Vec<Interval> {
         vec![
             Interval::Tonic,
@@ -394,8 +370,6 @@ pub mod dominant {
     pub fn _dominant() -> Vec<Interval> {
         vec![Interval::Dominant, Interval::LeadTone, Interval::Wholetone]
     }
-
-  
 }
 
 pub mod just {
@@ -414,21 +388,38 @@ pub mod just {
         ]
     }
     pub fn _dream() -> Vec<Interval> {
-        vec![Interval::Tonic,Interval::Subdominant, Interval::Dim5, Interval::Dominant, ]
+        vec![
+            Interval::Tonic,
+            Interval::Subdominant,
+            Interval::Dim5,
+            Interval::Dominant,
+        ]
     }
 }
 pub mod bitonal {
     use crate::chords::Interval;
 
     pub fn _elektra() -> Vec<Interval> {
-        vec![Interval::Tonic, Interval::Dominant, Interval::Aug5, Interval::Min9, Interval::Tenth] //test
+        vec![
+            Interval::Tonic,
+            Interval::Dominant,
+            Interval::Aug5,
+            Interval::Min9,
+            Interval::Tenth,
+        ] //test
     }
 }
 pub mod atonal {
     use crate::chords::Interval;
 
     pub fn _farben() -> Vec<Interval> {
-        vec![Interval::Tonic, Interval::Aug5, Interval::LeadTone, Interval::Tenth, Interval::Thirteenth]
+        vec![
+            Interval::Tonic,
+            Interval::Aug5,
+            Interval::LeadTone,
+            Interval::Tenth,
+            Interval::Thirteenth,
+        ]
     }
     pub fn _mystic() -> Vec<Interval> {
         vec![
@@ -441,19 +432,20 @@ pub mod atonal {
         ]
     }
     pub fn _northern_lights() -> Vec<Interval> {
-       vec![ Interval::Semitone,
-        Interval::Wholetone,
-        Interval::Aug5,
-        Interval::Octave,
-        Interval::Aug9,
-        Interval::Aug11,
-        Interval::Twelfth,
-        Interval::Aug13,
-        Interval::Fifteenth,
-        Interval::OctaveMaj10,
-        Interval::OctaveTwelfth,]
+        vec![
+            Interval::Semitone,
+            Interval::Wholetone,
+            Interval::Aug5,
+            Interval::Octave,
+            Interval::Aug9,
+            Interval::Aug11,
+            Interval::Twelfth,
+            Interval::Aug13,
+            Interval::Fifteenth,
+            Interval::OctaveMaj10,
+            Interval::OctaveTwelfth,
+        ]
     }
 
-    //TODO: finish implementing starting at "Ode-toNapoleon hexachord": https://en.wikipedia.org/wiki/List_of_chords 
+    //TODO: finish implementing starting at "Ode-toNapoleon hexachord": https://en.wikipedia.org/wiki/List_of_chords
 }
-

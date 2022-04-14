@@ -1,9 +1,9 @@
 use crate::interval::Interval;
-use Interval::{Wholetone, Semitone, Three4tone};
+use Interval::{Semitone, Three4tone, Wholetone};
 
-/// Is a series of trichords, tetrachords, and/or pentachords which 
+/// Is a series of trichords, tetrachords, and/or pentachords which
 /// Makam compose scales
-pub struct Makam { 
+pub struct Makam {
     pub djin: Vec<Interval>,
     pub scale: Vec<Interval>,
 }
@@ -30,7 +30,6 @@ impl Makam {
     pub fn hicaz(&mut self) {
         self.djin = vec![Wholetone, Wholetone, Semitone, Wholetone];
     }
-    
 }
 
 #[test]

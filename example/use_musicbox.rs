@@ -1,4 +1,4 @@
-use musicbox::western_music_box::WesternMusicBox;
+use musicbox::western_musicbox::WesternMusicBox;
 
 // Chord formation
 fn main() {

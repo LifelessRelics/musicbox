@@ -1,9 +1,8 @@
-
 #[test]
 ///Ensure the indexing is correct and an entry exists
 /// TODO: Confirm this matches the physical situation
 fn test_natural() {
-    use musicbox::natural_music_box::NaturalMusicBox;
+    use musicbox::natural_musicbox::NaturalMusicBox;
 
     let music = NaturalMusicBox::new();
     let query_natural_harmonics_4over3 = match music.harmonics.get("3/4") {
@@ -39,7 +38,7 @@ fn test_natural() {
 }
 #[test]
 fn test_western() {
-    use musicbox::western_music_box::WesternMusicBox;
+    use musicbox::western_musicbox::WesternMusicBox;
 
     let music = WesternMusicBox::new();
     let query_a0 = match music.harmonics.get("A0") {
