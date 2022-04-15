@@ -1,34 +1,57 @@
-pub mod instrument;
-pub mod chord;
-pub mod makam;
-pub mod notary;
-pub mod core;
-pub mod notation;
-pub mod natural_musicbox;
+use crate::{TONIC,SCOPE};
 use std::collections::HashMap;
-use notation::zoot_allures::Notation;
 
 
-/// Adjusts quantity of notes in hashmap
-pub const SCOPE: i64 = 365;
-/// Recently changed such that the A0 corresponds to the lowest note on a piano. Therefore middle-c is C3
-pub const TONIC: f64 = 27.0; //432.0 A
+///The golden Ratio
+pub fn phi() -> f64 {
+    (1.0 + 5.0_f64.sqrt()) / 2.0
+}
 
-///Core data.
+///For Makam
+///Calculate stacked Quartertones result
+pub fn quartertone(tonic_freq: f64, stack: i64) -> f64 {
+    tonic_freq * 2.0_f64.powf(stack as f64 / 24.0)
+}
+
+///Arabian music uses quartertones
+///Calculate (Wholetone - Quartertone) *degree
+pub fn three4tone(tonic_freq: f64, stack: i64) -> f64 {
+    tonic_freq * 2.0_f64.powf((3 * stack) as f64 / 24.0)
+}
+///experimental for cultural appreciation
+///Calculate 8th of a Wholetone
+pub fn eigth_tone(tonic_freq: f64, stack: i64) -> f64 {
+    tonic_freq * 2.0_f64.powf((stack) as f64 / 48.0)
+}
+///Deeper cultural appreciation, Also the sound can be said to vary by an amount 2^N, where N is the scope of detail.
+///Calculate 16th of a Wholetone
+pub fn sixteenth_tone(tonic_freq: f64, stack: i64) -> f64 {
+    tonic_freq * 2.0_f64.powf((3 * stack) as f64 / 96.0)
+}
+
+/// Western theory function takes in a tonic frequency and returns the frequency corresponding to:  Interval_frequency(degree) = TONIC* 2.0^(degree/12)
+pub fn semitone(tonic_freq: f64, degree: i64) -> f64 {
+    tonic_freq * 2.0_f64.powf(degree as f64 / 12.0)
+}
+
+
+#[derive(Default)]
 pub struct MusicBox {
-    pub tonic: f64,
+    key: String,
+    tonic: f64,
     pub notary: HashMap<String, f64>,
-    pub chord: Vec<Notation>,
+    pub chord_buf: Vec<f64>,
 }
 
 impl MusicBox {
     pub fn new() -> Self {
         let mut music = Self {
+            key: String::from("Welcome to Music box!"),
             tonic: TONIC,
-
             notary: HashMap::new(),
+
             
-            chord: vec![],
+            chord_buf: vec![],
         };
         music.fill_notes();
         music.fill_inverse_notes();
@@ -36,6 +59,10 @@ impl MusicBox {
     }
 }
 
+pub trait FillsNotary {
+    fn fill_notes(&mut self);
+    fn fill_inverse_notes(&mut self);
+}
 
 impl FillsNotary for MusicBox {
     fn fill_notes(&mut self) {
@@ -65,7 +92,7 @@ impl FillsNotary for MusicBox {
             let twelth_root_ratio: f64 = i as f64 / 12.0;
             let lambda: f64 = self.tonic * (2.0_f64.powf(twelth_root_ratio));
             self.notary
-                .insert(format!("{}{}", notes[k], j), lambda.to_owned());
+                .insert(format!("{}{}", notes[k], j) , lambda.to_owned());
 
             k += 1;
         }
@@ -104,10 +131,4 @@ impl FillsNotary for MusicBox {
             k += 1;
         }
     }
-}
-
-///Used to construct musicbox harmonics
-pub trait FillsNotary {
-    fn fill_notes(&mut self);
-    fn fill_inverse_notes(&mut self);
 }

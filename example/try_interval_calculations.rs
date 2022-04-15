@@ -1,5 +1,5 @@
 // use musicbox::{lambda, phi, twlv_root_two};
-use musicbox::{quartertone, three4tone};
+use musicbox::core::{quartertone, three4tone};
 
 fn main() {
     let iota = quartertone(440.0, 3);

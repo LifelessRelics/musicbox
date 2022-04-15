@@ -1,5 +1,5 @@
 pub mod major {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _major() -> Vec<Interval> {
         vec![Interval::Tonic, Interval::Maj3, Interval::Dominant]
@@ -150,7 +150,7 @@ pub mod major {
 }
 
 pub mod minor {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _minor() -> Vec<Interval> {
         vec![Interval::Tonic, Interval::Min3, Interval::Dominant]
@@ -231,7 +231,7 @@ pub mod minor {
 }
 
 pub mod augmented {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _aug() -> Vec<Interval> {
         vec![Interval::Tonic, Interval::Maj3, Interval::Aug5]
@@ -253,7 +253,7 @@ pub mod augmented {
         vec![
             Interval::Tonic,
             Interval::Maj3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Maj6,
         ]
     }
@@ -282,7 +282,7 @@ pub mod augmented {
             Interval::Maj3,
             Interval::Dominant,
             Interval::LeadTone,
-            Interval::Aug12,
+            Interval::Flat13,
         ]
     }
     pub fn _augmaj7() -> Vec<Interval> {
@@ -306,7 +306,7 @@ pub mod augmented {
         vec![
             Interval::Tonic,
             Interval::Maj3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::LeadTone,
             Interval::Maj9,
         ]
@@ -314,17 +314,17 @@ pub mod augmented {
 }
 
 pub mod diminished {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _dim() -> Vec<Interval> {
-        vec![Interval::Tonic, Interval::Min3, Interval::Dim5]
+        vec![Interval::Tonic, Interval::Min3, Interval::Tritone]
     }
 
     pub fn _dimmaj7() -> Vec<Interval> {
         vec![
             Interval::Tonic,
             Interval::Min3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::LeadTone,
         ]
     }
@@ -333,7 +333,7 @@ pub mod diminished {
         vec![
             Interval::Tonic,
             Interval::Min3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Maj6,
         ]
     }
@@ -342,7 +342,7 @@ pub mod diminished {
         vec![
             Interval::Tonic,
             Interval::Maj3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Dom7,
         ]
     }
@@ -358,14 +358,14 @@ pub mod diminished {
         vec![
             Interval::Tonic,
             Interval::Min3,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Dom7,
         ]
     }
 }
 
 pub mod dominant {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _dominant() -> Vec<Interval> {
         vec![Interval::Dominant, Interval::LeadTone, Interval::Wholetone]
@@ -373,13 +373,13 @@ pub mod dominant {
 }
 
 pub mod just {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
     pub fn _magic() -> Vec<Interval> {
         vec![
             Interval::Tonic,
             Interval::Semitone,
             Interval::Subdominant,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::LeadTone,
             Interval::Maj9,
             Interval::Tenth,
@@ -391,13 +391,13 @@ pub mod just {
         vec![
             Interval::Tonic,
             Interval::Subdominant,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Dominant,
         ]
     }
 }
 pub mod bitonal {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _elektra() -> Vec<Interval> {
         vec![
@@ -410,7 +410,7 @@ pub mod bitonal {
     }
 }
 pub mod atonal {
-    use crate::chords::Interval;
+    use crate::notation::Interval;
 
     pub fn _farben() -> Vec<Interval> {
         vec![
@@ -424,7 +424,7 @@ pub mod atonal {
     pub fn _mystic() -> Vec<Interval> {
         vec![
             Interval::Tonic,
-            Interval::Dim5,
+            Interval::Tritone,
             Interval::Dom7,
             Interval::Tenth,
             Interval::Thirteenth,

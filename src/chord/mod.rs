@@ -1,17 +1,17 @@
 pub mod chord_library;
-use crate::chords::chord_library::atonal::*;
-use crate::chords::chord_library::augmented::*;
-use crate::chords::chord_library::bitonal::*;
-use crate::chords::chord_library::diminished::*;
-use crate::chords::chord_library::dominant::*;
-use crate::chords::chord_library::just::*;
-use crate::chords::chord_library::major::*;
-use crate::chords::chord_library::minor::*;
-use crate::interval::Interval;
-use crate::TONIC;
-use crate::{eigth_tone, quartertone, semitone, sixteenth_tone, three4tone};
+use crate::chord::chord_library::atonal::*;
+use crate::chord::chord_library::augmented::*;
+use crate::chord::chord_library::bitonal::*;
+use crate::chord::chord_library::diminished::*;
+use crate::chord::chord_library::dominant::*;
+use crate::chord::chord_library::just::*;
+use crate::chord::chord_library::major::*;
+use crate::chord::chord_library::minor::*;
+use crate::notation::Interval;
+use crate::core::{eigth_tone, quartertone, semitone, sixteenth_tone, three4tone};
+mod zoot_allures;
 
-#[derive(Debug)]
+#[derive(Default)]
 pub struct Chord {
     pub tonic: f64,
     pub notes: Vec<Interval>,
@@ -22,7 +22,7 @@ pub struct Chord {
 impl Chord {
     pub fn new() -> Self {
         Self {
-            tonic: TONIC,
+            tonic: 440.0,
             notes: _major(),
             frequencies: vec![],
         }
@@ -33,19 +33,19 @@ impl Chord {
             match i {
                 Interval::Tonic => self.frequencies.push(semitone(self.tonic, 0)),
 
-                Interval::Sextone => self.frequencies.push(sixteenth_tone(self.tonic, 1)), // 16nd tone
-                Interval::Octone => self.frequencies.push(eigth_tone(self.tonic, 1)), // 8th tone
+                Interval::Sixteenth => self.frequencies.push(sixteenth_tone(self.tonic, 1)), // 16nd tone
+                Interval::Eigth => self.frequencies.push(eigth_tone(self.tonic, 1)), // 8th tone
                 Interval::Quartertone => self.frequencies.push(quartertone(self.tonic, 1)), //Quarter tone
 
                 Interval::Semitone => self.frequencies.push(semitone(self.tonic, 1)), //HALFSTEP
 
-                Interval::Three4tone => self.frequencies.push(three4tone(self.tonic, 1)),
+                Interval::ThreeQuarter => self.frequencies.push(three4tone(self.tonic, 1)),
 
                 Interval::Wholetone => self.frequencies.push(semitone(self.tonic, 2)),
                 Interval::Min3 => self.frequencies.push(semitone(self.tonic, 3)),
                 Interval::Maj3 => self.frequencies.push(semitone(self.tonic, 4)),
                 Interval::Subdominant => self.frequencies.push(semitone(self.tonic, 5)),
-                Interval::Dim5 => self.frequencies.push(semitone(self.tonic, 6)),
+                Interval::Tritone => self.frequencies.push(semitone(self.tonic, 6)),
                 Interval::Dominant => self.frequencies.push(semitone(self.tonic, 7)),
                 Interval::Aug5 => self.frequencies.push(semitone(self.tonic, 8)),
                 Interval::Maj6 => self.frequencies.push(semitone(self.tonic, 9)),
@@ -59,7 +59,7 @@ impl Chord {
                 Interval::Eleventh => self.frequencies.push(semitone(self.tonic, 17)), //fourth + octave
                 Interval::Aug11 => self.frequencies.push(semitone(self.tonic, 18)), //tritone + octave
                 Interval::Twelfth => self.frequencies.push(semitone(self.tonic, 19)), //Fifth + octave
-                Interval::Aug12 => self.frequencies.push(semitone(self.tonic, 20)), //Aug5 + octave
+                Interval::Flat13 => self.frequencies.push(semitone(self.tonic, 20)), //Aug5 + octave
                 Interval::Thirteenth => self.frequencies.push(semitone(self.tonic, 21)), //Maj6 + octave
                 Interval::Aug13 => self.frequencies.push(semitone(self.tonic, 22)), //Dom7 + octave
                 Interval::Maj14 => self.frequencies.push(semitone(self.tonic, 23)),
@@ -207,9 +207,9 @@ impl Chord {
     pub fn ninthdim5(&mut self) {
         self.notes = _ninthdim5();
     }
-    pub fn northern_lights(&mut self) {
-        self.notes = _northern_lights();
-    }
+    // pub fn northern_lights(&mut self) {
+    //     self.notes = _northern_lights();
+    // }
     //TODO: Add the rest of the chords: https://en.wikipedia.org/wiki/List_of_chords
 }
 

@@ -4,3 +4,4 @@ MusicBox - beginning music analysis in rust
 /// More bold would be to create a VST
 /// Original ideas steming from version="0.1.1"
 /// All contributions welcome, love to see how it plays out.
+/// The solution to the brain and quantum theory likely lives in these strings

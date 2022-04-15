@@ -1,4 +1,4 @@
-use crate::{SCOPE, TONIC, FillsNotes};
+use crate::{SCOPE, TONIC, FillsNotary};
 use std::collections::HashMap;
 
 /// Note of the harmonic series N+1/N where N is 1..inf because dividing by zero is the tonic "quote me"
@@ -7,27 +7,27 @@ use std::collections::HashMap;
 #[derive(Default)]
 pub struct NaturalMusicBox {
     tonic: f64,
-    pub notes: HashMap<String, f64>,
+    pub notary: HashMap<String, f64>,
 }
 
 impl NaturalMusicBox {
     pub fn new() -> Self {
         let mut music = Self {
             tonic: TONIC,
-            notes: HashMap::new(),
+            notary: HashMap::new(),
         };
         music.fill_notes();
         music
     }
 }
 
-impl FillsNotes for NaturalMusicBox {
+impl FillsNotary for NaturalMusicBox {
     //Indexed by their inverse ratio
     fn fill_notes(&mut self) {
         for i in 1..SCOPE {
             let harmonic_series: f64 = ((i as f64) + 1.0) / (i as f64);
             let overtone = self.tonic * harmonic_series;
-            self.notes
+            self.notary
                 .insert(format!("{}/{}", i, i + 1), overtone.to_owned());
         }
     }
@@ -35,7 +35,7 @@ impl FillsNotes for NaturalMusicBox {
         for i in 1..SCOPE {
             let harmonic_series: f64 = ((i as f64) + 1.0) / (i as f64);
             let overtone = self.tonic / harmonic_series;
-            self.notes
+            self.notary
                 .insert(format!("{}/{}", i, i + 1), overtone.to_owned());
         }
     }

@@ -1,11 +1,16 @@
 [package]
 name = "musicbox"
-version = "0.1.7"
+version = "0.2.0"
 author = "LifelessRelics <Holozetta@hologramhall.io"
 repository = "https://github.com/LifelessRelics/musicbox.git"
 description = "General Musical Framework for working with tonality"
 license ="MIT"
 edition = "2021"
+
+
+[[example]]
+name="notary"
+path="example/notary.rs"
 
 [[example]]
 name="try_interval_calculations"

@@ -1,10 +1,10 @@
-use musicbox::chords::chord_library::minor::_minor;
-use musicbox::chords::*;
-use musicbox::western_musicbox::WesternMusicBox;
+use musicbox::chord::chord_library::minor::_minor;
+use musicbox::chord::*;
+use musicbox::MusicBox;
 #[test]
 fn get_frequencies_of_a_chord() {
-    let music = WesternMusicBox::new();
-    let middle_c = match music.notes.get("C3") {
+    let music = MusicBox::new();
+    let middle_c = match music.notary.get("C3") {
         Some(v) => v,
         None => panic!(),
     };

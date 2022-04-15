@@ -1,24 +1,17 @@
-use crate::interval::Interval;
-use crate::{SCOPE, TONIC, FillsNotes};
-use std::collections::HashMap;
-
-/// Hashmap containing notes congruent with western music theory,
-/// not arranged with middle C as C0, with reason that no natural string may produce a harmonic below its tonic.
-#[derive(Default)]
-pub struct WesternMusicBox {
+pub struct MusicBox {
     tonic: f64,
-    western_degree: i64,
-    pub notes: HashMap<String, f64>,
-    chord: Vec<Interval>,
+    notation: bool,
+    notary: HashMap<String, f64>,
+    chord: Vec<Notation>,
 }
 
-impl WesternMusicBox {
+impl MusicBox {
     pub fn new() -> Self {
         let mut music = Self {
             tonic: TONIC,
-            western_degree: 0,
-            notes: HashMap::new(),
 
+            notary: HashMap::new(),
+            notation: false,
             
             chord: vec![],
         };
@@ -28,7 +21,8 @@ impl WesternMusicBox {
     }
 }
 
-impl FillsNotes for WesternMusicBox {
+
+impl FillsNotes for MusicBox {
     fn fill_notes(&mut self) {
         let notes =[
             "A".to_string(),
@@ -53,8 +47,7 @@ impl FillsNotes for WesternMusicBox {
                 j += 1;
             }
 
-            self.western_degree = i;
-            let twelth_root_ratio: f64 = self.western_degree as f64 / 12.0;
+            let twelth_root_ratio: f64 = i as f64 / 12.0;
             let lambda: f64 = self.tonic * (2.0_f64.powf(twelth_root_ratio));
             self.notes
                 .insert(format!("{}{}", notes[k], j), lambda.to_owned());
@@ -87,8 +80,8 @@ impl FillsNotes for WesternMusicBox {
                 j -= 1;
             }
 
-            self.western_degree = i;
-            let twelth_root_ratio: f64 = self.western_degree as f64 / 12.0;
+           
+            let twelth_root_ratio: f64 = i as f64 / 12.0;
             let lambda: f64 = self.tonic / (2.0_f64.powf(twelth_root_ratio));
             self.notes
                 .insert(format!("{}{}", notes[k], j), lambda);
@@ -97,21 +90,3 @@ impl FillsNotes for WesternMusicBox {
         }
     }
 }
-
-
-
-// enum ChordTonic {
-//     A,
-//     B,
-//     C,
-//     D,
-//     E,
-//     F,
-//     G,
-//     Ab,
-//     Bb,
-//     Db,
-//     Eb,
-//     Gb,
-//     Ab,
-// }
