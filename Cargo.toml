@@ -1,7 +1,7 @@
 [package]
 name = "musicbox"
-version = "0.2.0"
-author = "LifelessRelics <Holozetta@hologramhall.io"
+version = "0.2.1"
+authors = ["LifelessRelics <Holozetta@hologramhall.io"]
 repository = "https://github.com/LifelessRelics/musicbox.git"
 description = "General Musical Framework for working with tonality"
 license ="MIT"
@@ -9,20 +9,21 @@ edition = "2021"
 
 
 [[example]]
+name="chord_abstraction"
+path="example/chord_abstraction.rs"
+
+[[example]]
+name="guitar"
+path="example/guitar.rs"
+
+[[example]]
 name="notary"
 path="example/notary.rs"
 
 [[example]]
-name="try_interval_calculations"
-path="example/try_interval_calculations.rs"
-[[example]]
 name="use_musicbox"
 path="example/use_musicbox.rs"
-[[example]]
-name="use_makam"
-path="example/use_makam.rs"
-[[example]]
-name="guitar"
-path="example/guitar.rs"
+
+
 
 [dependencies]

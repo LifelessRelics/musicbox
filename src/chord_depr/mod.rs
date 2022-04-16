@@ -1,14 +1,14 @@
 pub mod chord_library;
-use crate::chord::chord_library::atonal::*;
-use crate::chord::chord_library::augmented::*;
-use crate::chord::chord_library::bitonal::*;
-use crate::chord::chord_library::diminished::*;
-use crate::chord::chord_library::dominant::*;
-use crate::chord::chord_library::just::*;
-use crate::chord::chord_library::major::*;
-use crate::chord::chord_library::minor::*;
+use crate::chord_depr::chord_library::atonal::*;
+use crate::chord_depr::chord_library::augmented::*;
+use crate::chord_depr::chord_library::bitonal::*;
+use crate::chord_depr::chord_library::diminished::*;
+use crate::chord_depr::chord_library::dominant::*;
+use crate::chord_depr::chord_library::just::*;
+use crate::chord_depr::chord_library::major::*;
+use crate::chord_depr::chord_library::minor::*;
+use crate::{eigth_tone, quartertone, semitone, sixteenth_tone, three4tone};
 use crate::notation::Interval;
-use crate::core::{eigth_tone, quartertone, semitone, sixteenth_tone, three4tone};
 mod zoot_allures;
 
 #[derive(Default)]

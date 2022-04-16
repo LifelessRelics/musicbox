@@ -1,10 +1,8 @@
 use crate::notation::zoot_allures::Notation;
-use Notation::{Z1,Z3};
+use Notation::{Z1, Z3};
 
 use Notation::Z2;
 use Notation::ZQ;
-
-
 
 /// Is a series of trichords, tetrachords, and/or pentachords which
 /// Makam compose scales

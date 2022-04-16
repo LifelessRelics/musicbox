@@ -6,12 +6,7 @@ pub mod major {
     }
 
     pub fn _maj7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z7,
-            Notation::Y,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z7, Notation::Y]
     }
 
     pub fn _dominant9() -> Vec<Notation> {
@@ -53,12 +48,7 @@ pub mod major {
     }
 
     pub fn _dominant7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z7,
-            Notation::X,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z7, Notation::X]
     }
 
     pub fn _dominant7sharp9() -> Vec<Notation> {
@@ -104,12 +94,7 @@ pub mod major {
     }
     ////////////
     pub fn _maj6() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z7,
-            Notation::Z6,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z7, Notation::Z6]
     }
     pub fn _maj69() -> Vec<Notation> {
         vec![
@@ -141,11 +126,7 @@ pub mod major {
         ]
     }
     pub fn _neopolitan() -> Vec<Notation> {
-        vec![
-            Notation::Z1,
-            Notation::Z5,
-            Notation::Y,
-        ]
+        vec![Notation::Z1, Notation::Z5, Notation::Y]
     }
 }
 
@@ -156,12 +137,7 @@ pub mod minor {
         vec![Notation::Z0, Notation::Z3, Notation::Z7]
     }
     pub fn _minmaj7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z7,
-            Notation::Y,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z7, Notation::Y]
     }
     pub fn _min9() -> Vec<Notation> {
         vec![
@@ -173,20 +149,10 @@ pub mod minor {
         ]
     }
     pub fn _min7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z7,
-            Notation::X,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z7, Notation::X]
     }
     pub fn _min6() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z7,
-            Notation::Z6,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z7, Notation::Z6]
     }
     pub fn _min69() -> Vec<Notation> {
         vec![
@@ -237,12 +203,7 @@ pub mod augmented {
         vec![Notation::Z0, Notation::Z4, Notation::Z6]
     }
     pub fn _aug7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z6,
-            Notation::X,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z6, Notation::X]
     }
 
     pub fn _aug6_italian() -> Vec<Notation> {
@@ -250,21 +211,11 @@ pub mod augmented {
     }
 
     pub fn _aug6_french() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z6,
-            Notation::Z9,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z6, Notation::Z9]
     }
 
     pub fn _aug6_german() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z7,
-            Notation::Z9,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z7, Notation::Z9]
     }
     pub fn _aug11() -> Vec<Notation> {
         vec![
@@ -286,12 +237,7 @@ pub mod augmented {
         ]
     }
     pub fn _augmaj7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z6,
-            Notation::Y,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z6, Notation::Y]
     }
     pub fn _ninthaug5() -> Vec<Notation> {
         vec![
@@ -321,46 +267,22 @@ pub mod diminished {
     }
 
     pub fn _dimmaj7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z6,
-            Notation::Y,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z6, Notation::Y]
     }
 
     pub fn _dim7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z6,
-            Notation::Z9,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z6, Notation::Z9]
     }
 
     pub fn _dominant7flat5() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z4,
-            Notation::Z6,
-            Notation::X,
-        ]
+        vec![Notation::Z0, Notation::Z4, Notation::Z6, Notation::X]
     }
     pub fn _lead_tone_triad() -> Vec<Notation> {
-        vec![
-            Notation::Z2,
-            Notation::Z5,
-            Notation::Y,
-        ]
+        vec![Notation::Z2, Notation::Z5, Notation::Y]
     }
 
     pub fn _halfdim7() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z3,
-            Notation::Z6,
-            Notation::X,
-        ]
+        vec![Notation::Z0, Notation::Z3, Notation::Z6, Notation::X]
     }
 }
 
@@ -388,12 +310,7 @@ pub mod just {
         ]
     }
     pub fn _dream() -> Vec<Notation> {
-        vec![
-            Notation::Z0,
-            Notation::Z5,
-            Notation::Z6,
-            Notation::Z7,
-        ]
+        vec![Notation::Z0, Notation::Z5, Notation::Z6, Notation::Z7]
     }
 }
 pub mod bitonal {
