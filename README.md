@@ -3,6 +3,6 @@ MusicBox - music theory framework for the analysis of music in rust
 /// Feeding a music AI
 /// More bold would be to create a VST
 /// ZootAllures is a reference to Frank Zappa
-/// ^^^(this) notation is for the simplification of INTERVALS which remain constant
+/// ZA notation is for the simplification of INTERVALS which remain constant
 /// All contributions welcome, love to see how it plays out.
 /// The solution to the brain and quantum theory likely lives in these strings.
