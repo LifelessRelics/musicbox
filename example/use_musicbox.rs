@@ -10,5 +10,5 @@ fn main() {
     let c0 = music.notary.get("C0").unwrap();
     let e0 = music.notary.get("E0").unwrap();
     let a_minor_0 = (a0, c0, e0);
-    dbg!(a_minor_0); //Gives A0 as 27 Hz!
+    dbg!(a_minor_0);
 }
