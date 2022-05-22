@@ -2,10 +2,13 @@ use musicbox::MusicBox;
 
 // Chord formation
 fn main() {
-    let mut music = MusicBox::new();
+    let music = MusicBox::new();
 
-    let a_major_0 = music
+    let a0 = music
         .notary
-        .retain(|k, _| k == "A0" && k == "Db0" && k == "E0");
-    dbg!(a_major_0); //FAILS!
+        .get("A0").unwrap();
+    let c0 = music.notary.get("C0").unwrap();
+    let e0 = music.notary.get("E0").unwrap();
+    let a_minor_0 = (a0, c0, e0);
+    dbg!(a_minor_0); //Gives A0 as 27 Hz!
 }

@@ -1,11 +1,12 @@
 [package]
 name = "musicbox"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["LifelessRelics <Holozetta@hologramhall.io"]
 repository = "https://github.com/LifelessRelics/musicbox.git"
 description = "General Musical Framework for working with tonality"
 license ="MIT"
 edition = "2021"
+
 
 
 [[example]]

@@ -6,9 +6,9 @@ use crate::_1;
 /// Tones wrapping vector is a single string and starting at index 0 gives the tonic and successive semitones[frets]
 #[derive(Debug)]
 pub struct Guitar {
-    tuning: Vec<f64>,
-    tones: Vec<Vec<f64>>,
-    positions: Vec<[f64; 6]>,
+    pub tuning: Vec<f64>,
+    pub tones: Vec<Vec<f64>>,
+    pub positions: Vec<[f64; 6]>,
 }
 
 impl Guitar {

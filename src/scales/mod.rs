@@ -3,7 +3,7 @@ use Notation::*;
 mod mode;
 use crate::scales::mode::Mode;
 
-mod chordlib;
+pub mod chordlib;
 use chordlib::ChordLib;
 ///ScaleConstructor
 

@@ -66,7 +66,7 @@ fn notation_to_scales(extensions: Vec<Notation>) -> Vec<f64> {
 }
 
 fn notation_to_f64_singleton(tonic: f64, note: Notation) -> f64 {
-    use musicbox::core::semitone;
+    use musicbox::semitone;
     match note {
         Z0 => semitone(tonic, 0),
         Z1 => semitone(tonic, 1),

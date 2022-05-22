@@ -3,14 +3,16 @@ use crate::notary::fills_notary::FillsNotary;
 #[derive(Default)]
 pub struct MusicBox {
     tonic: f64,
+    time_signature: usize,  //set 16 for 16th note division
     notary: HashMap<String, f64>,
+    sheet_music: MusicScore,
 }
 
 impl MusicBox {
-    pub fn new() -> Self {
+    pub fn new_4over4() -> Self {
         let mut music = Self {
             tonic: TONIC,
-
+            time_signature: 16,
             notary: HashMap::new(),
         };
         music.scoped_fill();
@@ -28,6 +30,11 @@ impl MusicBox {
 }
 
 
+impl TimeSignature for MusicBox {
+    fn set_time_signature(&mut self) {
+        self.sheet_music = MusicScore::from(self.time_signature);
+    }
+}
 impl FillsNotary for MusicBox {
     fn piano(&mut self) {
         let notes =[

@@ -4,10 +4,18 @@ pub mod makam;
 pub mod natural_musicbox;
 pub mod notary;
 pub mod notation;
+pub mod note;
 pub mod scales;
+pub mod score;
+pub mod mubot;
+pub mod fetchuser;
+use scales::chordlib::major::_major;
 use notary::fills_notary::FillsNotary;
 use notation::zoot_allures::Notation;
+use fetchuser::{fetch_input};
+use mubot::Mubot;
 use std::collections::HashMap;
+
 
 /// Adjusts quantity of notes in hashmap
 pub const SCOPE: i64 = 365;
@@ -37,7 +45,21 @@ impl MusicBox {
         music.piano();
         music
     }
+    // fn chord_fetch(input: Notation) -> Chord {
+    //     println!("Welcome to Musicbox. EnterScaleToReceiveChords [ |0| 123456789XY, |A| BCDEFGHIJKL, |M| ]");
+    //     let scale = fetch_input();
+    // }
 }
+
+
+
+
+struct Chord {
+    scale: Vec<Notation>,
+    buffer: Vec<Notation>,
+}
+
+
 
 impl FillsNotary for MusicBox {
     fn piano(&mut self) {
